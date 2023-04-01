@@ -26,6 +26,9 @@ function App() {
             <input type='password' placeholder='Senha...' />
             <input type='submit' nama='acao' value='Logar!' />
           </form>
+          <div className='btn__criarConta'>
+            <a href='#'>Criar Conta!</a>
+          </div>
       </div>
       </div>
       </div>
@@ -33,6 +36,5 @@ function App() {
     </div>
   );
 }
-//terça!!
 
 export default App;
