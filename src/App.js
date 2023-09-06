@@ -28,7 +28,7 @@ function App() {
           </form>
           <div className='btn__criarConta'>
             <a href='#'>Criar Conta!</a>
-          </div>
+          </div> 
       </div>
       </div>
       </div>
