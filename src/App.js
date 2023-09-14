@@ -7,7 +7,7 @@ npm start */
 
 function App() {
 
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState('Jonathan');
 
   useEffect(()=>{
     
@@ -21,7 +21,13 @@ function App() {
           <div className='header__logo'>
             <a href=''><img src='https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png' /> </a>
           </div>
-
+          {
+            (user)?
+            <div className='header__logadoInfo'>
+              <span>Olá, <b>{user} </b> </span>
+              <a href='#'>Postar!</a> 
+            </div>
+            :
           <div className='header__loginForm'>
             <form>
             <input type='text' placeholder='Login...' />
@@ -32,9 +38,10 @@ function App() {
             <a href='#'>Criar Conta!</a>
           </div> 
       </div>
-      </div>
-      </div>
-
+      }
+    </div>
+    </div>
+    
     </div>
   );
 }

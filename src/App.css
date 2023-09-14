@@ -50,7 +50,6 @@
   height: 20px;
   padding: 0px 10px;
   border-radius: 10px;
-
   cursor: pointer;
   font-size: 14px;
   
@@ -70,3 +69,20 @@
   font-size: 14px;
   margin: 0 10px;
 }
+
+.header__logadoInfo{
+  text-align: right;
+  width: 50%;
+}
+
+.header__logadoInfo a{
+  margin: 0 10px;
+  background-color: #0095f6;
+  color: white;
+  text-decoration: none;
+  padding: 8px 10px;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 14px;
+}
+/* RETORNAR COM 6:35 */
