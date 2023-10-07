@@ -1,14 +1,14 @@
 import './App.css';
 import "firebase/compat/auth";
 import {useEffect, useState} from 'react';
-import Header from './Header';
-
+import Header from './Header'; 
 /*Para executar o servidor: abrir o cmd e o seguinte comando: "cd\ >> C:\> cd Users\jonat\jontagram >> 
 npm start */
+/*Parei com 10:21 */
 
 function App() {
 
-  const [user, setUser] = useState();
+  const [user, setUser] = useState('Jonathan');
 
   useEffect(()=>{
     
@@ -18,8 +18,7 @@ function App() {
   return (
     <div className="App">
 
-      <Header setUser={setUser} user={user}></Header>
-      
+      <Header></Header>:
     
     </div>
   );

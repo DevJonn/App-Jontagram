@@ -1,11 +1,20 @@
 import {useEffect, useState} from 'react';
-
-
+import "firebase/compat/auth";
 function Header(props){
 
     useEffect(() => {
         
     }, [])
+
+    function criarConta(e){
+
+        e.preventDefault();
+
+        //criar conta firebase;
+
+
+    }
+
     
     function abrirModalCriarConta(e){
         e.preventDefault();
@@ -30,12 +39,12 @@ function Header(props){
 
         <div className='modalCriarConta'>
             <div className='formCriarConta'> 
-                <div onClick={()=>fecharModalCriar()} className='close-modal-criar'>X</div>
+                <div onClick={(e)=>fecharModalCriar(e)} className='close-modal-criar'>X</div>
                     <h2>Criar Conta</h2>
                         <form onSubmit={()=>criarConta()}>
-                            <input type='text' placeholder='Seu E-mail...'/>
-                            <input type='text' placeholder='Seu Username...'/>
-                            <input type='password' placeholder='Sua Senha...'/>
+                            <input id='email-cadastro' type='text' placeholder='Seu E-mail...'/>
+                            <input id='username-cadastro' type='text' placeholder='Seu Username...'/>
+                            <input id='senha-cadastro' type='password' placeholder='Sua Senha...'/>
                             <input type='submit' value='Criar Conta!' />
                         </form>
             </div>
