@@ -8,7 +8,7 @@ npm start */
 
 function App() {
 
-  const [user, setUser] = useState('Jonathan');
+  const [user, setUser] = useState();
 
   useEffect(()=>{
     
