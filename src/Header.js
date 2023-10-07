@@ -17,12 +17,14 @@ function Header(props){
 
         <div className='modalCriarConta'>
             <div className='formCriarConta'> 
-            <h2>Criar Conta</h2>
-                <form>
-                    <input type='text' placeholder='Seu E-mail...'/>
-                    <input type='text' placeholder='Seu Username...'/>
-                    <input type='password' placeholder='Sua Senha...'/>
-                </form>
+                <div className='close-modal-criar'>X</div>
+                <h2>Criar Conta</h2>
+                    <form>
+                        <input type='text' placeholder='Seu E-mail...'/>
+                        <input type='text' placeholder='Seu Username...'/>
+                        <input type='password' placeholder='Sua Senha...'/>
+                        <input type='submit' value='Criar Conta!' />
+                    </form>
             </div>
         </div>
     

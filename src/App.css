@@ -121,6 +121,27 @@
   margin-bottom: 10px;  
 }
 
+.formCriarConta input[type=submit]{
+  background-color: #0095f6;
+  cursor: pointer;
+  color: white;
+  font-size: 17px;
+}
+
+.close-modal-criar{
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  width: 30px;
+  text-align: center;
+  color: white;
+  line-height: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: #0095f6;
+}
+
 
 
 
