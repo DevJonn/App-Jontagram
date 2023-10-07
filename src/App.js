@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import "firebase/compat/auth";
 import {useEffect, useState} from 'react';
