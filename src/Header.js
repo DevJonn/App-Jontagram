@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
 
 
-function Header(){
+function Header(props){
 
     
     return (
@@ -13,9 +13,9 @@ function Header(){
         <a href=''><img src='https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png' /> </a>
     </div>
     {
-        (user)?
+        (props.user)?
         <div className='header__logadoInfo'>
-        <span>Olá, <b>{user} </b> </span>
+        <span>Olá, <b>{props.user} </b> </span>
         <a href='#'>Postar!</a> 
         </div>
         :
