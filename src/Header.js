@@ -12,6 +12,19 @@ function Header(props){
     }
 
     return (
+
+    <div className='header'>
+
+        <div className='modalCriarConta'>
+            <div className='formCriarConta'> 
+                <form>
+                    <input type='text' placeholder='Seu E-mail...'/>
+                    <input type='text' placeholder='Seu Username...'/>
+                    <input type='password' placeholder='Sua Senha...'/>
+                </form>
+            </div>
+        </div>
+    
         
 
     <div className='header'>
@@ -39,7 +52,7 @@ function Header(props){
 }
 </div>
 </div>
-
+</div>
     )
 
 }
