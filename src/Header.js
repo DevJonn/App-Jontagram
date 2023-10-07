@@ -3,6 +3,9 @@ import {useEffect, useState} from 'react';
 
 function Header(props){
 
+    useEffect(() => {
+        props.setUser('Jonathan');
+    }, [])
     
     return (
         
