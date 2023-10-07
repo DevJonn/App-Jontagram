@@ -9,7 +9,7 @@ npm start */
 
 function App() {
 
-  
+  const [user, setUser] = useState('Jonathan');
 
   useEffect(()=>{
     
