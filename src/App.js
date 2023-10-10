@@ -4,7 +4,7 @@ import {useEffect, useState} from 'react';
 import Header from './Header'; 
 /*Para executar o servidor: abrir o cmd e o seguinte comando: "cd\ >> C:\> cd Users\jonat\jontagram >> 
 npm start */
-/*Parei com 10:21 */
+/*Parei com  */
 
 function App() {
 

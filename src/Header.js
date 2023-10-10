@@ -41,7 +41,7 @@ function Header(props){
             <div className='formCriarConta'> 
                 <div onClick={(e)=>fecharModalCriar(e)} className='close-modal-criar'>X</div>
                     <h2>Criar Conta</h2>
-                        <form onSubmit={()=>criarConta()}>
+                        <form onSubmit={(e)=>criarConta(e)}>
                             <input id='email-cadastro' type='text' placeholder='Seu E-mail...'/>
                             <input id='username-cadastro' type='text' placeholder='Seu Username...'/>
                             <input id='senha-cadastro' type='password' placeholder='Sua Senha...'/>
