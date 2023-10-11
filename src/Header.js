@@ -9,10 +9,19 @@ function Header(props){
     function criarConta(e){
         
         e.preventDefault();
+        let email = document.getElementById('email-cadastro').value;
+        let username = document.getElementById('username-cadastro').value;    
+        let senha = document.getElementById('senha-cadastro').value;
 
         //criar conta firebase;
-        auth.createUserWithEmailAndPassword();
-    
+        auth.createUserWithEmailAndPassword(email,senha)
+        .then((authUser)=>{
+            authUser.user.updateProfile({
+                displayName:username
+            })
+            
+        })
+        ;
     }
 
     
