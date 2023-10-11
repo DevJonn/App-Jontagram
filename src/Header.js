@@ -79,7 +79,7 @@ function Header(props){
         </div>
         :
         <div className='header__loginForm'>
-            <form>
+            <form onSubmit={(e)=>logar(e)}>
                 <input type='text' placeholder='Login...' />
                 <input type='password' placeholder='Senha...' />
                 <input type='submit' nama='acao' value='Logar!' />
