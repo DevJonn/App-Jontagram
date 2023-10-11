@@ -6,6 +6,7 @@ function Header(props){
         
     }, [])
 
+
     function criarConta(e){
         
         e.preventDefault();
@@ -27,6 +28,20 @@ function Header(props){
             alert('E-mail ou Senha Incorreta');
         })
         ;
+    }
+
+    function logar(e){
+        e.preventDefault();
+        let email = document.getElementById('email-login').value;
+        let senha = document.getElementById('senha-login').value;
+
+        auth.signInWithEmailAndPassword(email,senha)
+        .then((auth)=>{
+            props.setUser(auth.user.displayName);
+            alert('logado com sucesso!');
+        }).catch((err)=>{
+            alert(err.message);
+        })
     }
 
     
@@ -66,30 +81,30 @@ function Header(props){
     
         
 
-    <div className='header'>
-        <div className='center'>
-            <div className='header__logo'>
-                <a href=''><img src='https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png' /> </a>
+        <div className='header'>
+            <div className='center'>
+                <div className='header__logo'>
+                    <a href=''><img src='https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png' /> </a>
+                </div>
+            {
+            (props.user)?
+            <div className='header__logadoInfo'>
+                <span>Olá, <b>{props.user}</b></span>
+                <a href='#'>Postar!</a> 
             </div>
-        {
-        (props.user)?
-        <div className='header__logadoInfo'>
-            <span>Olá, <b>{props.user} </b> </span>
-            <a href='#'>Postar!</a> 
-        </div>
-        :
-        <div className='header__loginForm'>
-            <form onSubmit={(e)=>logar(e)}>
-                <input type='text' placeholder='Login...' />
-                <input type='password' placeholder='Senha...' />
-                <input type='submit' nama='acao' value='Logar!' />
-            </form>
-        <div className='btn__criarConta'>
-        <a onClick={(e)=>abrirModalCriarConta(e)}  href='#'>Criar Conta!</a>
-    </div> 
-</div>
-}
-</div>
+            :
+            <div className='header__loginForm'>
+                <form onSubmit={(e)=>logar(e)}>
+                    <input id='email-login' type='text' placeholder='Login...' />
+                    <input id='senha-login' type='password' placeholder='Senha...' />
+                    <input type='submit' nama='acao' value='Logar!' />
+                </form>
+            <div className='btn__criarConta'>
+            <a onClick={(e)=>abrirModalCriarConta(e)}  href='#'>Criar Conta!</a>
+        </div> 
+    </div>
+    }
+    </div>
 </div>
 </div>
     )
