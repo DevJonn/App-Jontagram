@@ -19,7 +19,12 @@ function Header(props){
             authUser.user.updateProfile({
                 displayName:username
             })
-            
+            alert('Conta criada com sucesso!');
+                let modal = document.querySelector('.modalCriarConta');
+
+                modal.style.display = 'none';
+        }).catch((error)=>{
+            alert('E-mail ou Senha Incorreta');
         })
         ;
     }
