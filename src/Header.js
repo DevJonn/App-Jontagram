@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react';
-import "firebase/compat/auth";
+import {auth} from './firebase';
 function Header(props){
 
     useEffect(() => {
@@ -7,12 +7,12 @@ function Header(props){
     }, [])
 
     function criarConta(e){
-
+        
         e.preventDefault();
 
         //criar conta firebase;
-
-
+        auth.createUserWithEmailAndPassword();
+    
     }
 
     

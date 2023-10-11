@@ -1,6 +1,7 @@
 import firebase from 'firebase';
 
-var firebaseApp = firebase.initializeApp({
+
+const firebaseApp = firebase.initializeApp({
     apiKey: "AIzaSyDm1w-D07_Cx7KSKEA2dkXC7JUCMWnj7XI",
     authDomain: "jontagram-fd225.firebaseapp.com",
     projectId: "jontagram-fd225",
@@ -15,4 +16,4 @@ const auth = firebase.auth();
 const storage = firebase.storage();
 const functions = firebase.functions();
 
-export {db, auth, storage, functions};
+export { db, auth, storage, functions };

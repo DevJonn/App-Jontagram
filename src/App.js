@@ -1,10 +1,10 @@
 import './App.css';
-import "firebase/compat/auth";
+import {auth} from './firebase';
 import {useEffect, useState} from 'react';
 import Header from './Header'; 
 /*Para executar o servidor: abrir o cmd e o seguinte comando: "cd\ >> C:\> cd Users\jonat\jontagram >> 
 npm start */
-/*Parei com  */
+/*Parei com  12min*/
 
 function App() {
 
