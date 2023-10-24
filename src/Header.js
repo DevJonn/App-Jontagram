@@ -2,7 +2,9 @@ import {useEffect, useState} from 'react';
 import {auth} from './firebase';
 function Header(props){
 
-    
+    const [progress,setProgress] = useState(0);
+    const [file, setFile] = useState(null);
+
 
     useEffect(() => {
         
@@ -65,12 +67,19 @@ function Header(props){
 
 
     //Upload de Postagem
+
     function abrirModalUpload(e){
         e.preventDefault();
 
+        let modal= document.querySelector('.modalUpload');
+        modal.style.display = 'block';
+    }
+
+
+    function fecharModalUpload(){
         let modal = document.querySelector('.modalUpload');
 
-        modal.style.display = 'block';
+        modal.style.display = 'none';
     }
 
     function uploadPost(e){
@@ -99,7 +108,7 @@ function Header(props){
     
         <div className='modalUpload'>
             <div className='formUpload'> 
-                <div onClick={(e)=>fecharModalUpload(e)} className='close-modal-criar'>X</div>
+                <div onClick={()=>fecharModalUpload()} className='close-modal-criar'>X</div>
                     <h2>Fazer Upload</h2>
                         <form onSubmit={(e)=>uploadPost(e)}>
                             <progress value={progress}></progress>
