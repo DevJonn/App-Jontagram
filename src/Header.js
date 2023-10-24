@@ -84,6 +84,8 @@ function Header(props){
 
     function uploadPost(e){
         e.preventDefault();
+        let tituloPost = document.getElementById('titulo-upload').value;
+        let progressEl = document.getElementById('progress-upload');
     }
 
 
@@ -111,10 +113,10 @@ function Header(props){
                 <div onClick={()=>fecharModalUpload()} className='close-modal-criar'>X</div>
                     <h2>Fazer Upload</h2>
                         <form onSubmit={(e)=>uploadPost(e)}>
-                            <progress value={progress}></progress>
+                            <progress id='progress-upload' value={progress}></progress>
                             <input id='titulo-upload' type='text' placeholder='Poste Agora...'/>
-                            <input type='file' name='file' />
-                            <input type='submit' value='Criar Conta!' />
+                            <input onChange={(e)=>setFile(e.target.files[0])} type='file' name='file' />
+                            <input type='submit' value='Postar!' />
                         </form>
             </div>
         </div>
