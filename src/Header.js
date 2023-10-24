@@ -2,6 +2,8 @@ import {useEffect, useState} from 'react';
 import {auth} from './firebase';
 function Header(props){
 
+    
+
     useEffect(() => {
         
     }, [])
@@ -98,11 +100,11 @@ function Header(props){
         <div className='modalUpload'>
             <div className='formUpload'> 
                 <div onClick={(e)=>fecharModalUpload(e)} className='close-modal-criar'>X</div>
-                    <h2>Criar Conta</h2>
+                    <h2>Fazer Upload</h2>
                         <form onSubmit={(e)=>uploadPost(e)}>
-                            <input id='email-cadastro' type='text' placeholder='Seu E-mail...'/>
-                            <input id='username-cadastro' type='text' placeholder='Seu Username...'/>
-                            <input id='senha-cadastro' type='password' placeholder='Sua Senha...'/>
+                            <progress value={progress}></progress>
+                            <input id='titulo-upload' type='text' placeholder='Poste Agora...'/>
+                            <input type='file' name='file' />
                             <input type='submit' value='Criar Conta!' />
                         </form>
             </div>
