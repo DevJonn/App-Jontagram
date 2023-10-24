@@ -60,6 +60,16 @@ function Header(props){
         modal.style.display = 'none';
     }
 
+    function abrirModalUpload(e){
+        e.preventDefault();
+
+        let modal = document.querySelector('.modalUpload');
+
+        modal.style.display = 'block';
+
+    }
+
+
 
 
     return (
@@ -79,6 +89,19 @@ function Header(props){
             </div>
         </div>
     
+        <div className='modalUpload'>
+            <div className='formCriarConta'> 
+                <div onClick={(e)=>fecharModalCriar(e)} className='close-modal-criar'>X</div>
+                    <h2>Criar Conta</h2>
+                        <form onSubmit={(e)=>criarConta(e)}>
+                            <input id='email-cadastro' type='text' placeholder='Seu E-mail...'/>
+                            <input id='username-cadastro' type='text' placeholder='Seu Username...'/>
+                            <input id='senha-cadastro' type='password' placeholder='Sua Senha...'/>
+                            <input type='submit' value='Criar Conta!' />
+                        </form>
+            </div>
+        </div>
+
         
 
         <div className='header'>
@@ -90,7 +113,7 @@ function Header(props){
             (props.user)?
             <div className='header__logadoInfo'>
                 <span>Olá, <b>{props.user}</b></span>
-                <a href='#'>Postar!</a> 
+                <a onClick={(e)=>abrirModalUpload(e)} href='#'>Postar!</a> 
             </div>
             :
             <div className='header__loginForm'>
