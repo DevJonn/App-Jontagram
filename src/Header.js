@@ -44,6 +44,7 @@ function Header(props){
         })
     }
 
+
     
     function abrirModalCriarConta(e){
         e.preventDefault();
@@ -51,7 +52,7 @@ function Header(props){
         let modal = document.querySelector('.modalCriarConta');
 
         modal.style.display = 'block';
-
+        
     }
 
     function fecharModalCriar(){
@@ -60,13 +61,18 @@ function Header(props){
         modal.style.display = 'none';
     }
 
+
+    //Upload de Postagem
     function abrirModalUpload(e){
         e.preventDefault();
 
         let modal = document.querySelector('.modalUpload');
 
         modal.style.display = 'block';
+    }
 
+    function uploadPost(e){
+        e.preventDefault();
     }
 
 
@@ -90,10 +96,10 @@ function Header(props){
         </div>
     
         <div className='modalUpload'>
-            <div className='formCriarConta'> 
-                <div onClick={(e)=>fecharModalCriar(e)} className='close-modal-criar'>X</div>
+            <div className='formUpload'> 
+                <div onClick={(e)=>fecharModalUpload(e)} className='close-modal-criar'>X</div>
                     <h2>Criar Conta</h2>
-                        <form onSubmit={(e)=>criarConta(e)}>
+                        <form onSubmit={(e)=>uploadPost(e)}>
                             <input id='email-cadastro' type='text' placeholder='Seu E-mail...'/>
                             <input id='username-cadastro' type='text' placeholder='Seu Username...'/>
                             <input id='senha-cadastro' type='password' placeholder='Sua Senha...'/>
