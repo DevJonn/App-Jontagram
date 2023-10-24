@@ -184,3 +184,17 @@
   font-size: 17px;
 }
 
+.close-modal-criar{
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  cursor: pointer;
+  width: 30px;
+  text-align: center;
+  color: white;
+  line-height: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: #0095f6;
+}
+
