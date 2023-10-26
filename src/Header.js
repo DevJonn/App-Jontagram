@@ -92,7 +92,7 @@ function Header(props){
         let tituloPost = document.getElementById('titulo-upload').value;
         let progressEl = document.getElementById('progress-upload');
 
-        const uploadTask = storage.ref(`images/${file.name}`).put(file);
+        const uploadTask = storage.ref('images/${file.name}').put(file);
 
         uploadTask.on('state_changed',function(snapshot){
             const progress = Math.round(snapshot.bytesTransferred/snapshot.totalBytes) * 100;
@@ -100,7 +100,6 @@ function Header(props){
         },function(error){
 
         }, function(){
-            
             storage.ref('images').child(file.name).getDownloadURL()
             .then(function(url){
                 db.collection('posts').add({
@@ -108,19 +107,19 @@ function Header(props){
                     image: url,
                     userName: props.user,
                     timestamp: firebase.firestore.FieldValue.serverTimestamp()
+                })
+
+                setProgress(0);
+                setFile(null);
+
+
+                alert('upload realizado!');
+
+                document.getElementById('form-upload').reset();
             })
-
-            setProgress(0);
-            setFile(null);
-
-            alert('Upload Realizado');
-
-
-            document.getElementById('form-upload').reset();
         })
-        
-    })
-    
+
+
     }
 
 
@@ -151,8 +150,9 @@ function Header(props){
                             <progress id='progress-upload' value={progress}></progress>
                             <input id='titulo-upload' type='text' placeholder='Descrição do Post...'/>
                             <input onChange={(e)=>setFile(e.target.files[0])} type='file' name='file' />
-                            <input type='submit' value='Postar!' />
+                            <input type='submit' value='Postar!'/> 
                         </form>
+                        
             </div>
         </div>
 
