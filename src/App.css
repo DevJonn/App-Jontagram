@@ -198,3 +198,16 @@
   background-color: #0095f6;
 }
 
+.postSingle{
+  background-color: white;
+  max-width: 700px;
+  margin: 10px auto;
+}
+
+.postSingle img{
+  width: 100%;
+}
+
+.postSingle p{
+  padding: 10px;
+}
