@@ -32,7 +32,10 @@ function App() {
       {
         posts.map(function(val){
           return (
-            <p>{val.info.titulo}</p>
+            <div className='postSingle'>
+              <img src={val.info.image} />
+              <p><b> {val.info.userName} </b>:{val.info.titulo} </p>
+            </div>
 
           )
         })
