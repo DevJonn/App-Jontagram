@@ -2,6 +2,8 @@ import './App.css';
 import {auth,db} from './firebase';
 import {useEffect, useState} from 'react';
 import Header from './Header'; 
+import Post from './Post';
+
 /*Para executar o servidor: abrir o cmd e o seguinte comando: "cd\ >> C:\> cd Users\jonat\jontagram >> 
 npm start 
 Ou abrir terminal e digitar npm start
@@ -31,12 +33,9 @@ function App() {
 
       {
         posts.map(function(val){
-          return (
-            <div className='postSingle'>
-              <img src={val.info.image} />
-              <p><b> {val.info.userName} </b>:{val.info.titulo} </p>
-            </div>
 
+          return (
+            <Post info={val.info} id={val.id} />
           )
         })
       }
