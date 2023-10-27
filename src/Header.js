@@ -92,7 +92,7 @@ function Header(props){
         let tituloPost = document.getElementById('titulo-upload').value;
         let progressEl = document.getElementById('progress-upload');
 
-        const uploadTask = storage.ref('images/${file.name}').put(file);
+        const uploadTask = storage.ref(`images/${file.name}`).put(file);
 
         uploadTask.on('state_changed',function(snapshot){
             const progress = Math.round(snapshot.bytesTransferred/snapshot.totalBytes) * 100;
@@ -116,6 +116,7 @@ function Header(props){
                 alert('upload realizado!');
 
                 document.getElementById('form-upload').reset();
+            
             })
         })
 
