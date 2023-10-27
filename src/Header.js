@@ -91,18 +91,21 @@ function Header(props){
         e.preventDefault();
         let tituloPost = document.getElementById('titulo-upload').value;
 
-        const uploadTask = storage.ref(`images/${file.name}`).put(file); //Criando uma 
+        const uploadTask = storage.ref(`images/${file.name}`).put(file); /*Criando uma referencia no "Storage", para criar uma pasta "Images"(caso nao tenha ele cria),
+        file.name - vai ter o nome do arquivo
+        */
 
-        uploadTask.on('state_changed',function(snapshot){
+        uploadTask.on('state_changed',function(snapshot){ //mostra o status do arquivo
             const progress = Math.round(snapshot.bytesTransferred/snapshot.totalBytes) * 100;
-            setProgress(progress);
-        },function(error){
+            setProgress(progress); //conta quanto falta para o upload, e atualiza em tempo real com o outro progress existente
 
-        }, function(){
-            storage.ref('images').child(file.name).getDownloadURL()
+        },function(error){ //para caso dê algum erro
+
+        }, function(){ 
+            storage.ref('images').child(file.name).getDownloadURL() //aqui é pedido a pasta "Images no Storage para fazer download e inserir no banco de dados"
             .then(function(url){
-                db.collection('posts').add({
-                    titulo: tituloPost,
+                db.collection('posts').add({ //db - onde fica o banco de dados
+                    titulo: tituloPost, 
                     image: url,
                     userName: props.user,
                     timestamp: firebase.firestore.FieldValue.serverTimestamp()
@@ -110,7 +113,6 @@ function Header(props){
 
                 setProgress(0);
                 setFile(null);
-
 
                 alert('upload realizado!');
 
