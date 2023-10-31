@@ -8,6 +8,7 @@ import Post from './Post';
 npm start 
 Ou abrir terminal e digitar npm start
 */
+//AULA SISTEMA DE COMENTARIOS NAS POSTAGENS
 
 function App() {
 
@@ -16,6 +17,10 @@ function App() {
   const [posts,setPosts] = useState([]);
 
   useEffect(()=>{
+
+    auth.onAuthStateChanged(function(val){
+      setUser(val.displayName);
+    })
     
     db.collection('posts').orderBy('timestamp','desc').onSnapshot(function(snapshot){
       setPosts(snapshot.docs.map(function(document){

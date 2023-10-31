@@ -6,11 +6,10 @@ function Header(props){
     const [progress,setProgress] = useState(0);
     const [file, setFile] = useState(null);
 
-    //VIDEO PARADO EM MIN
 
     useEffect(() => {
         
-        
+
 
     }, [])
 
