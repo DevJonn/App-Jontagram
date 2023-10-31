@@ -14,6 +14,7 @@ function Header(props){
     }, [])
 
 
+
     function criarConta(e){
         
         e.preventDefault();
@@ -46,11 +47,19 @@ function Header(props){
         .then((auth)=>{
             props.setUser(auth.user.displayName);
             alert('logado com sucesso!');
+            window.location.href = "/";
         }).catch((err)=>{
             alert(err.message);
         })
     }
 
+    function deslogar(e){
+        e.preventDefault();
+        auth.signOut().then(function(val){
+            props.setUser(null);
+            window.location.href = "/";
+        })
+    }
 
     
     function abrirModalCriarConta(e){
@@ -171,6 +180,7 @@ function Header(props){
             <div className='header__logadoInfo'>
                 <span>Olá, <b>{props.user}</b></span>
                 <a onClick={(e)=>abrirModalUpload(e)} href='#'>Postar!</a> 
+                <a onClick={(e)=>deslogar(e)}>Deslogar</a>
             </div>
             :
             <div className='header__loginForm'>

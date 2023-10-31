@@ -9,6 +9,7 @@ npm start
 Ou abrir terminal e digitar npm start
 */
 //AULA SISTEMA DE COMENTARIOS NAS POSTAGENS
+//Caso persista erro de loggout, tirar da função o comando seguinte:window.location.href = "/"; encontra0se na function login e loggout
 
 function App() {
 
