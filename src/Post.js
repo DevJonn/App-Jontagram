@@ -4,6 +4,16 @@ import {useEffect, useState} from 'react';
 
 function Post(props){
 
+    const [comentarios,setComentarios] = useState([]);
+
+    useEffect(() => {
+        db.collection('posts').doc(props.id).collection('comentarios').onSnapshot(function(snapshot){
+            setComentarios(snapshot.docs.map(function(document){
+                return{id:document.id,info:document.data()}
+            }))
+        })
+    }, [])
+
 
     function comentar(id,e){
         e.preventDefault();
@@ -24,7 +34,24 @@ function Post(props){
     return (
         <div className='postSingle'>
             <img src={props.info.image} />
-            <p><b> {props.info.userName} </b>:{props.info.titulo} </p>
+            <p><b> {props.info.userName} </b>:  {props.info.titulo} </p>
+
+            <div className='coments'>
+
+                {
+                    comentarios.map(function(val){
+                        return(
+                            <div className='coment-single'>
+                                <p><b>{val.info.nome}</b>:  {val.info.comentario}</p>
+                            </div>
+                        )
+                    })
+                }
+
+            </div>
+
+
+
             <form onSubmit={(e)=>comentar(props.id,e)}>
                 <textarea id={'comentario-'+props.id}></textarea>
                 <input type='submit' value='Comentar' />
