@@ -13,14 +13,16 @@ Ou abrir terminal e digitar npm start
 
 function App() {
 
-  const [user, setUser] = useState('Jonathan');
+  const [user, setUser] = useState();
 
   const [posts,setPosts] = useState([]);
 
   useEffect(()=>{
 
     auth.onAuthStateChanged(function(val){
+      if(val!=null){
       setUser(val.displayName);
+      }
     })
     
     db.collection('posts').orderBy('timestamp','desc').onSnapshot(function(snapshot){
@@ -41,6 +43,7 @@ function App() {
         posts.map(function(val){
 
           return (
+
             <Post user={user} info={val.info} id={val.id} />
           )
         })
