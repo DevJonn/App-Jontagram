@@ -127,6 +127,7 @@ function Header(props){
                 alert('upload realizado!');
 
                 document.getElementById('form-upload').reset();
+                fecharModalUpload();
             
             })
         })
