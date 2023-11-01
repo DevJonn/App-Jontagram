@@ -8,7 +8,7 @@ import Post from './Post';
 npm start 
 Ou abrir terminal e digitar npm start
 */
-//AULA SISTEMA DE COMENTARIOS NAS POSTAGENS
+//AULA SISTEMA DE COMENTARIOS NAS POSTAGENS 8:10min
 //Caso persista erro de loggout, tirar da função o comando seguinte:window.location.href = "/"; encontra0se na function login e loggout
 
 function App() {
@@ -41,7 +41,7 @@ function App() {
         posts.map(function(val){
 
           return (
-            <Post info={val.info} id={val.id} />
+            <Post user={user} info={val.info} id={val.id} />
           )
         })
       }

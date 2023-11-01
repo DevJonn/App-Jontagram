@@ -11,7 +11,7 @@ function Post(props){
         let comentarioAtual = document.querySelector('#comentario-'+id).value;
 
         db.collection('posts').doc(id).collection('comentarios').add({
-            nome: 'jtorres',
+            nome: props.user,
             comentario: comentarioAtual
         })
 
