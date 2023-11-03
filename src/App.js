@@ -6,10 +6,10 @@ import Post from './Post';
 
 /*Para executar o servidor: abrir o cmd e o seguinte comando: "cd\ >> C:\> cd Users\jonat\jontagram >> 
 npm start 
-Ou abrir terminal e digitar npm start
+Ou abrir terminal(Ctrl +  ") e digitar npm start
 */
-//AULA SISTEMA DE COMENTARIOS NAS POSTAGENS 8:10min
-//Caso persista erro de loggout, tirar da função o comando seguinte:window.location.href = "/"; encontra0se na function login e loggout
+//AULA REGRAS DE SEGURANÇA 9min
+//Caso persista erro de loggout, tirar da função o comando seguinte:window.location.href = "/"; encontrasse na function login e loggout
 
 function App() {
 
