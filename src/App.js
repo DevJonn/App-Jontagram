@@ -8,7 +8,7 @@ import Post from './Post';
 npm start 
 Ou abrir terminal(Ctrl +  ") e digitar npm start
 */
-//AULA REGRAS DE SEGURANÇA 9min
+//Erro no terminal: firebase login --reauth
 //Caso persista erro de loggout, tirar da função o comando seguinte:window.location.href = "/"; encontrasse na function login e loggout
 
 function App() {
