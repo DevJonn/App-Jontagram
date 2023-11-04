@@ -141,7 +141,7 @@ function Header(props){
     return (
 
     <div className='header'>
-
+        <div name='viewport' content='width=device-width, initial-scale=1.0'></div>
         <div className='modalCriarConta'>
             <div className='formCriarConta'> 
                 <div onClick={(e)=>fecharModalCriar(e)} className='close-modal-criar'>X</div>
