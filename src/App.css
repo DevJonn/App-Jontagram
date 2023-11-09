@@ -1,7 +1,8 @@
 *{
-    margin: 0;
+    margin: 2px;
     padding: 0;
     box-sizing: border-box;
+    font-size: 17px;
 }
 
 .body{
@@ -9,6 +10,7 @@
 }
 
 .center{
+    text-align: center;
     padding: 0 2%;
     display: flex;
     margin: 0 auto;
@@ -17,21 +19,24 @@
 
 .header{
     padding: 10px 0;
+    
     background-color: white;
     border-bottom: 2px solid rgb(230,230,230);
 }
 
 .header__logo{
     width: 50%;
+    
 }
 
 .header__loginForm{
     width: 100%;
-    text-align: right;
+    text-align: center;
 }
 
 .header__loginForm form{
     display: inline-block;
+    text-align: center;
 }
 
 .header__loginForm input[type=text],
@@ -240,10 +245,24 @@
     font-size: 14px;
 }
 
-/* Estilos padrão para todas as telas */
 
-body {
-    background-color: lightgray;
-    font-size: 16px;
+/* Estilos específicos para telas de celular (largura máxima de 767px) */
+@media (max-width: 400px) {
+    body {
+        font-size: 15px;
+    }
 }
 
+/* Estilos específicos para telas maiores (largura mínima de 1024px) */
+@media (min-width: 1024px) {
+    body {
+        font-size: 20px;
+    }
+}
+
+/* Estilos específicos para telas muito grandes (largura mínima de 1200px) */
+@media (min-width: 1200px) {
+    body {
+        font-size: 22px;
+    }
+}
